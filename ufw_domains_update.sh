@@ -1,8 +1,8 @@
 #!/bin/bash
 HOSTNAMES=("my.domain.com" "my.other-domain.com")
-LOGFILE=~/ufw.$HOSTNAME.log
 
 for HOSTNAME in ${HOSTNAMES[@]}; do
+    LOGFILE=~/ufw.$HOSTNAME.log
     Current_IPs=$(dig +short $HOSTNAME | tail -n+2 | sort)
     echo Current IPs for $HOSTNAME: $Current_IPs
 
